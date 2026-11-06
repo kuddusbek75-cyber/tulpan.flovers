@@ -1,0 +1,615 @@
+{
+ "shop": {
+  "name": "Tulpan Flowers",
+  "whatsapp": "996700633602",
+  "instagram": "tulpan_flowers_manas",
+  "instagram2": "",
+  "hours": "09:00–00:00",
+  "addresses": [
+   "Тумонбай Байзакова 204Ж",
+   "Артыкбаева 1"
+  ]
+ },
+ "categories": [
+  {
+   "id": "bouquets",
+   "name": "Букеты"
+  },
+  {
+   "id": "baskets",
+   "name": "Корзины и боксы"
+  },
+  {
+   "id": "bride",
+   "name": "Букеты невест"
+  },
+  {
+   "id": "flowers",
+   "name": "Цветы поштучно"
+  },
+  {
+   "id": "toys",
+   "name": "Мягкие игрушки"
+  },
+  {
+   "id": "gifts",
+   "name": "К подарку"
+  }
+ ],
+ "products": [
+  {
+   "id": "b-red-25",
+   "cat": "bouquets",
+   "name": "25 красных роз",
+   "desc": "Классика, которая всегда в тему: свежие красные розы в зелени.",
+   "img": "img/b-red-25.jpg",
+   "options": [
+    {
+     "label": "",
+     "price": 3000
+    }
+   ],
+   "hit": true,
+   "active": true
+  },
+  {
+   "id": "b-pink-25",
+   "cat": "bouquets",
+   "name": "25 розовых роз",
+   "desc": "Нежные розовые розы с белой каймой.",
+   "img": "img/b-pink-25.jpg",
+   "options": [
+    {
+     "label": "",
+     "price": 3000
+    }
+   ],
+   "hit": true,
+   "active": true
+  },
+  {
+   "id": "b-tulips",
+   "cat": "bouquets",
+   "name": "Тюльпаны",
+   "desc": "Яркие тюльпаны — наш фирменный цветок.",
+   "img": "img/b-tulips.jpg",
+   "options": [
+    {
+     "label": "15 шт",
+     "price": 1500
+    },
+    {
+     "label": "25 шт",
+     "price": 2500
+    },
+    {
+     "label": "51 шт",
+     "price": 4800
+    }
+   ],
+   "hit": false,
+   "active": true
+  },
+  {
+   "id": "b-cream-bear",
+   "cat": "bouquets",
+   "name": "Мишка с розой",
+   "desc": "Плюшевый мишка с красной розой — милый подарок без повода.",
+   "img": "img/b-cream-bear.jpg",
+   "options": [
+    {
+     "label": "",
+     "price": 4500
+    }
+   ],
+   "hit": true,
+   "active": true
+  },
+  {
+   "id": "b-white-51",
+   "cat": "bouquets",
+   "name": "51 белая роза",
+   "desc": "Большой букет белых роз с атласной лентой.",
+   "img": "img/b-white-51.jpg",
+   "options": [
+    {
+     "label": "",
+     "price": 5500
+    }
+   ],
+   "hit": false,
+   "active": true
+  },
+  {
+   "id": "b-hydrangea",
+   "cat": "bouquets",
+   "name": "Гортензия микс",
+   "desc": "Розовые и голубые гортензии — пышно и нежно.",
+   "img": "img/b-hydrangea.jpg",
+   "options": [
+    {
+     "label": "",
+     "price": 7500
+    }
+   ],
+   "hit": false,
+   "active": true
+  },
+  {
+   "id": "b-peach-big",
+   "cat": "bouquets",
+   "name": "Персиковый букет",
+   "desc": "Пышный букет персиковых и розовых роз в упаковке.",
+   "img": "img/b-peach-big.jpg",
+   "options": [
+    {
+     "label": "51 шт",
+     "price": 6000
+    },
+    {
+     "label": "101 шт",
+     "price": 9000
+    }
+   ],
+   "hit": false,
+   "active": true
+  },
+  {
+   "id": "b-mix-101",
+   "cat": "bouquets",
+   "name": "101 роза — красно-белый микс",
+   "desc": "Красные и кремовые розы — эффект «вау» гарантирован.",
+   "img": "img/b-mix-101.jpg",
+   "options": [
+    {
+     "label": "",
+     "price": 9000
+    }
+   ],
+   "hit": true,
+   "active": true
+  },
+  {
+   "id": "b-red-101",
+   "cat": "bouquets",
+   "name": "101 красная роза",
+   "desc": "Самый большой знак любви.",
+   "img": "img/b-red-101.jpg",
+   "options": [
+    {
+     "label": "",
+     "price": 9500
+    }
+   ],
+   "hit": false,
+   "active": true
+  },
+  {
+   "id": "k-pink-gyps",
+   "cat": "baskets",
+   "name": "Корзина розовых роз",
+   "desc": "Розовые розы в плетёной корзине.",
+   "img": "img/k-pink-gyps.jpg",
+   "options": [
+    {
+     "label": "",
+     "price": 6500
+    }
+   ],
+   "hit": true,
+   "active": true
+  },
+  {
+   "id": "k-white-101",
+   "cat": "baskets",
+   "name": "Корзина с белыми розами",
+   "desc": "Белые розы и зелень в плетёной корзине.",
+   "img": "img/k-white-101.jpg",
+   "options": [
+    {
+     "label": "",
+     "price": 9900
+    }
+   ],
+   "hit": false,
+   "active": true
+  },
+  {
+   "id": "k-box",
+   "cat": "baskets",
+   "name": "Цветы в коробке",
+   "desc": "Розы в шляпной коробке — фото и цвет по вашему выбору.",
+   "img": "img/k-box.jpg",
+   "options": [
+    {
+     "label": "S",
+     "price": 2500
+    },
+    {
+     "label": "M",
+     "price": 3500
+    },
+    {
+     "label": "L",
+     "price": 5000
+    }
+   ],
+   "hit": false,
+   "active": true
+  },
+  {
+   "id": "br-classic",
+   "cat": "bride",
+   "name": "Букет невесты",
+   "desc": "Соберём под платье и стиль свадьбы. Напишите нам — пришлём варианты.",
+   "img": "img/br-classic.jpg",
+   "options": [
+    {
+     "label": "",
+     "price": 3500
+    }
+   ],
+   "hit": false,
+   "active": true
+  },
+  {
+   "id": "f-red-rose",
+   "cat": "flowers",
+   "name": "Красная роза",
+   "desc": "Цена за 1 шт. Соберём букет из любого количества.",
+   "img": "img/f-red-rose.jpg",
+   "options": [
+    {
+     "label": "1 шт",
+     "price": 100
+    }
+   ],
+   "hit": false,
+   "active": true
+  },
+  {
+   "id": "f-white-rose",
+   "cat": "flowers",
+   "name": "Белая роза",
+   "desc": "Цена за 1 шт.",
+   "img": "img/f-white-rose.jpg",
+   "options": [
+    {
+     "label": "1 шт",
+     "price": 100
+    }
+   ],
+   "hit": false,
+   "active": true
+  },
+  {
+   "id": "f-juliet",
+   "cat": "flowers",
+   "name": "Джульетта (пионовидная роза)",
+   "desc": "Цена за 1 шт.",
+   "img": "img/f-juliet.jpg",
+   "options": [
+    {
+     "label": "1 шт",
+     "price": 250
+    }
+   ],
+   "hit": false,
+   "active": true
+  },
+  {
+   "id": "f-chrysanthemum",
+   "cat": "flowers",
+   "name": "Хризантема",
+   "desc": "Цена за 1 ветку.",
+   "img": "img/f-chrysanthemum.jpg",
+   "options": [
+    {
+     "label": "1 ветка",
+     "price": 150
+    }
+   ],
+   "hit": false,
+   "active": true
+  },
+  {
+   "id": "f-gypsophila",
+   "cat": "flowers",
+   "name": "Гипсофила",
+   "desc": "Цена за 1 ветку.",
+   "img": "img/f-gypsophila.jpg",
+   "options": [
+    {
+     "label": "1 ветка",
+     "price": 200
+    }
+   ],
+   "hit": false,
+   "active": true
+  },
+  {
+   "id": "f-spray-rose",
+   "cat": "flowers",
+   "name": "Спрей-роза (кустовая)",
+   "desc": "Цена за 1 ветку.",
+   "img": "img/f-spray-rose.jpg",
+   "options": [
+    {
+     "label": "1 ветка",
+     "price": 180
+    }
+   ],
+   "hit": false,
+   "active": true
+  },
+  {
+   "id": "f-hydrangea",
+   "cat": "flowers",
+   "name": "Гортензия",
+   "desc": "Цена за 1 шт.",
+   "img": "img/f-hydrangea.jpg",
+   "options": [
+    {
+     "label": "1 шт",
+     "price": 450
+    }
+   ],
+   "hit": false,
+   "active": true
+  },
+  {
+   "id": "f-lily",
+   "cat": "flowers",
+   "name": "Лилия",
+   "desc": "Цена за 1 ветку.",
+   "img": "img/f-lily.jpg",
+   "options": [
+    {
+     "label": "1 ветка",
+     "price": 300
+    }
+   ],
+   "hit": false,
+   "active": true
+  },
+  {
+   "id": "t-teddy",
+   "cat": "toys",
+   "name": "Плюшевый мишка",
+   "desc": "Мягкий мишка в кофточке.",
+   "img": "img/t-teddy.jpg",
+   "options": [
+    {
+     "label": "30 см",
+     "price": 800
+    },
+    {
+     "label": "50 см",
+     "price": 1500
+    },
+    {
+     "label": "80 см",
+     "price": 2500
+    }
+   ],
+   "hit": false,
+   "active": true
+  },
+  {
+   "id": "t-giant",
+   "cat": "toys",
+   "name": "Большой мишка",
+   "desc": "Огромный мишка, которого можно обнять.",
+   "img": "img/t-giant.jpg",
+   "options": [
+    {
+     "label": "1 м",
+     "price": 3500
+    },
+    {
+     "label": "1,4 м",
+     "price": 5500
+    },
+    {
+     "label": "1,8 м",
+     "price": 8000
+    }
+   ],
+   "hit": true,
+   "active": true
+  },
+  {
+   "id": "t-love",
+   "cat": "toys",
+   "name": "Розовый мишка «LOVE»",
+   "desc": "Мишка с сердцем на футболке.",
+   "img": "img/t-love.jpg",
+   "options": [
+    {
+     "label": "80 см",
+     "price": 2000
+    },
+    {
+     "label": "1,2 м",
+     "price": 3500
+    }
+   ],
+   "hit": false,
+   "active": true
+  },
+  {
+   "id": "t-pink-hood",
+   "cat": "toys",
+   "name": "Мишка в капюшоне",
+   "desc": "Малиновый, мягкий, очень пушистый.",
+   "img": "img/t-pink-hood.jpg",
+   "options": [
+    {
+     "label": "40 см",
+     "price": 1500
+    },
+    {
+     "label": "70 см",
+     "price": 2800
+    }
+   ],
+   "hit": false,
+   "active": true
+  },
+  {
+   "id": "t-donkey",
+   "cat": "toys",
+   "name": "Синий ослик",
+   "desc": "Грустный и милый — поднимет настроение.",
+   "img": "img/t-donkey.jpg",
+   "options": [
+    {
+     "label": "40 см",
+     "price": 1500
+    },
+    {
+     "label": "70 см",
+     "price": 2800
+    }
+   ],
+   "hit": false,
+   "active": true
+  },
+  {
+   "id": "t-panda",
+   "cat": "toys",
+   "name": "Панда с сердцем",
+   "desc": "Панда с сердечком «I love you».",
+   "img": "img/t-panda.jpg",
+   "options": [
+    {
+     "label": "30 см",
+     "price": 900
+    },
+    {
+     "label": "50 см",
+     "price": 1500
+    }
+   ],
+   "hit": false,
+   "active": true
+  },
+  {
+   "id": "t-pair",
+   "cat": "toys",
+   "name": "Мишки-капюшоны (синий / малиновый)",
+   "desc": "Выберите цвет в комментарии к заказу.",
+   "img": "img/t-pair.jpg",
+   "options": [
+    {
+     "label": "40 см",
+     "price": 1500
+    },
+    {
+     "label": "70 см",
+     "price": 2800
+    }
+   ],
+   "hit": false,
+   "active": true
+  },
+  {
+   "id": "e-foil-digits",
+   "cat": "gifts",
+   "name": "Шар-цифра (фольга)",
+   "desc": "Золото или серебро. Цифру напишите в комментарии.",
+   "img": "img/e-foil-digits.jpg",
+   "options": [
+    {
+     "label": "1 цифра",
+     "price": 300
+    }
+   ],
+   "hit": false,
+   "active": true
+  },
+  {
+   "id": "e-candles",
+   "cat": "gifts",
+   "name": "Свеча-цифра на торт",
+   "desc": "Золотые свечи-цифры с блёстками.",
+   "img": "img/e-candles.jpg",
+   "options": [
+    {
+     "label": "1 шт",
+     "price": 100
+    }
+   ],
+   "hit": false,
+   "active": true
+  },
+  {
+   "id": "e-hats",
+   "cat": "gifts",
+   "name": "Праздничный колпак",
+   "desc": "Для дня рождения.",
+   "img": "img/e-hats.jpg",
+   "options": [
+    {
+     "label": "1 шт",
+     "price": 100
+    }
+   ],
+   "hit": false,
+   "active": true
+  },
+  {
+   "id": "e-bags",
+   "cat": "gifts",
+   "name": "Подарочный пакет",
+   "desc": "Разные цвета.",
+   "img": "img/e-bags.jpg",
+   "options": [
+    {
+     "label": "S",
+     "price": 100
+    },
+    {
+     "label": "M",
+     "price": 150
+    },
+    {
+     "label": "L",
+     "price": 250
+    }
+   ],
+   "hit": false,
+   "active": true
+  },
+  {
+   "id": "e-big-bag",
+   "cat": "gifts",
+   "name": "Большой розовый пакет",
+   "desc": "Для больших подарков и мягких игрушек.",
+   "img": "img/e-big-bag.jpg",
+   "options": [
+    {
+     "label": "",
+     "price": 300
+    }
+   ],
+   "hit": false,
+   "active": true
+  },
+  {
+   "id": "e-card",
+   "cat": "gifts",
+   "name": "Открытка с вашим текстом",
+   "desc": "Напишем от руки — текст укажите в заказе.",
+   "img": "img/e-card.jpg",
+   "options": [
+    {
+     "label": "",
+     "price": 50
+    }
+   ],
+   "hit": false,
+   "active": true
+  }
+ ]
+}

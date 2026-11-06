@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Панель</title>
+<link rel="icon" href="/static/shop/img/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#110d10;--bg-2:#171216;--card:#1c161a;--line:#2e252b;--line-2:#3d3139;--text:#f7eff2;--muted:#a8989f;--pink:#f2708f;--pink-2:#ff94ab;--pink-ink:#2a0d16;--ok:#6fd39a;--bad:#ff7b7b}
+*{box-sizing:border-box;margin:0}
+[hidden]{display:none!important}
+body{background:var(--bg);color:var(--text);font:15px/1.5 'Manrope',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer;border:0;background:none}
+a{color:inherit;text-decoration:none}
+img{display:block}
+:focus-visible{outline:2px solid var(--pink-2);outline-offset:2px}
+.wrap{max-width:1000px;margin:0 auto;padding:0 16px}
+.btn{height:40px;padding:0 18px;border-radius:10px;font-weight:600;font-size:14px;display:inline-flex;align-items:center;gap:6px;justify-content:center}
+.btn-pink{background:var(--pink);color:var(--pink-ink)}
+.btn-pink:hover{background:var(--pink-2)}
+.btn-pink:disabled{opacity:.4;cursor:default}
+.btn-line{border:1px solid var(--line-2)}
+.btn-line:hover{border-color:var(--pink)}
+.btn-bad{color:var(--bad);border:1px solid #5a2a2f}
+input,select,textarea{background:var(--bg-2);border:1px solid var(--line-2);border-radius:10px;padding:9px 11px;font-size:14px;width:100%}
+input:focus,select:focus,textarea:focus{border-color:var(--pink);outline:0}
+label{display:grid;gap:5px;font-size:12.5px;color:var(--muted);font-weight:600}
+
+#login{min-height:100vh;display:grid;place-items:center;padding:16px}
+.login{width:min(360px,100%);background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px;display:grid;gap:16px;text-align:center}
+.login img{width:72px;height:72px;border-radius:50%;margin:0 auto}
+h1,h2{font-weight:600}
+.err{color:var(--bad);font-size:13px;min-height:18px}
+
+header{position:sticky;top:0;z-index:5;background:rgba(17,13,16,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.hdr{display:flex;align-items:center;gap:14px;height:60px}
+.hdr img{width:34px;height:34px;border-radius:50%}
+.hdr h1{font-size:18px;white-space:nowrap}
+.tabs{display:flex;gap:4px;margin-left:auto;min-width:0;overflow-x:auto;scrollbar-width:none}
+.tab{flex:none;height:36px;padding:0 14px;border-radius:999px;font-size:13.5px;font-weight:600;color:var(--muted);white-space:nowrap}
+.tab[aria-selected=true]{background:var(--card);color:var(--text)}
+.tools{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:18px 0 12px}
+.tools input{flex:1;min-width:180px}
+.tools select{width:auto}
+.hint{color:var(--muted);font-size:13px;padding-bottom:12px}
+
+.list{display:grid;gap:10px;padding-bottom:60px}
+.row{display:grid;grid-template-columns:64px 1fr auto;gap:14px;align-items:start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px}
+.row.off{opacity:.55}
+.row.dirty{border-color:var(--pink)}
+.thumb{width:64px;height:64px;border-radius:10px;object-fit:cover;background:var(--bg-2)}
+.thumb.none{display:grid;place-items:center;font-size:26px}
+.row h3{font-size:15px;font-weight:600;line-height:1.3}
+.row .cat{font-size:12px;color:var(--muted)}
+.prices{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.pr{display:flex;align-items:center;background:var(--bg-2);border:1px solid var(--line-2);border-radius:10px;overflow:hidden}
+.pr span{padding:0 8px;font-size:12px;color:var(--muted);white-space:nowrap}
+.pr input{width:96px;border:0;border-left:1px solid var(--line-2);border-radius:0;text-align:right;font-weight:700;padding:7px 8px}
+.pr em{font-style:normal;font-size:12px;color:var(--muted);padding:0 8px 0 0}
+.flags{display:flex;gap:14px;margin-top:8px;font-size:13px;color:var(--muted)}
+.flags label{display:flex;align-items:center;gap:6px;font-weight:500;font-size:13px;cursor:pointer}
+.flags input{width:16px;height:16px;accent-color:var(--pink)}
+.acts{display:flex;flex-direction:column;gap:8px}
+.acts .btn{height:36px;padding:0 14px;font-size:13px}
+
+.panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;display:grid;gap:14px;margin:20px 0 60px;max-width:560px}
+
+dialog{margin:auto;background:var(--bg-2);color:var(--text);border:1px solid var(--line);border-radius:18px;padding:0;width:min(560px,calc(100% - 24px));max-height:calc(100% - 24px)}
+dialog::backdrop{background:rgba(0,0,0,.65)}
+.dlg{display:grid;gap:14px;padding:20px}
+.dlg h2{font-size:22px}
+.photo{display:grid;grid-template-columns:110px 1fr;gap:14px;align-items:center}
+.photo img,.photo .none{width:110px;height:110px;border-radius:12px;object-fit:cover;background:var(--card);display:grid;place-items:center;font-size:36px}
+.opt-row{display:grid;grid-template-columns:1fr 130px 36px;gap:8px}
+.del-opt{height:40px;border-radius:10px;border:1px solid var(--line-2);color:var(--muted)}
+.dlg-f{display:flex;gap:10px;justify-content:space-between;flex-wrap:wrap;padding-top:6px}
+.dlg-wide{width:min(720px,calc(100% - 24px))}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.dot{display:inline-grid;place-items:center;min-width:18px;height:18px;padding:0 5px;margin-left:4px;border-radius:999px;background:var(--pink);color:var(--pink-ink);font-size:11px;font-weight:700}
+
+/* заказы и клиенты */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding-top:18px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px}
+.stat b{display:block;font-size:22px;font-weight:700;line-height:1.2}
+.stat span{font-size:12.5px;color:var(--muted)}
+.ord{display:grid;grid-template-columns:1fr auto;gap:10px 16px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;cursor:pointer}
+.ord:hover{border-color:var(--line-2)}
+.ord.is-new{border-color:var(--pink)}
+.ord.is-off{opacity:.55}
+.ord h3{font-size:15px;font-weight:600}
+.ord .meta{font-size:12.5px;color:var(--muted)}
+.ord .what{font-size:13.5px;margin-top:6px}
+.ord .sum{font-size:17px;font-weight:700;text-align:right;white-space:nowrap}
+.ord-side{display:grid;gap:8px;justify-items:end;align-content:start}
+.ord-side select{width:150px;padding:6px 9px;font-size:13px}
+.ord-side .btn{height:32px;padding:0 12px;font-size:12.5px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{height:32px;padding:0 12px;border:1px solid var(--line-2);border-radius:999px;font-size:13px;font-weight:600;color:var(--muted)}
+.chip[aria-pressed=true]{background:var(--pink);border-color:var(--pink);color:var(--pink-ink)}
+.cl{grid-template-columns:1fr auto}
+.item-row{display:grid;grid-template-columns:1fr 70px 110px 36px;gap:8px}
+.total-line{display:flex;justify-content:space-between;font-weight:700;font-size:16px}
+.hist{display:grid;gap:6px;font-size:13.5px}
+.hist div{display:flex;justify-content:space-between;gap:12px;padding:8px 10px;background:var(--card);border-radius:10px}
+
+/* инфо-сайт */
+.block{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;display:grid;gap:14px;margin-top:16px}
+.block h2{font-size:20px}
+.block>p{color:var(--muted);font-size:13px;margin-top:-8px}
+.edit-card{display:grid;grid-template-columns:120px 1fr;gap:14px;padding-top:14px;border-top:1px solid var(--line)}
+.edit-card:first-of-type{border-top:0;padding-top:0}
+.shot{display:grid;gap:6px;align-content:start}
+.shot img,.shot .none{width:100%;aspect-ratio:1;object-fit:cover;border-radius:10px;background:var(--bg-2);display:grid;place-items:center;font-size:30px}
+.shot .btn{height:32px;padding:0 8px;font-size:12px;cursor:pointer}
+.fields{display:grid;gap:10px}
+.strip-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.sticky-save{position:sticky;bottom:0;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:14px 0;margin-top:8px;background:linear-gradient(transparent,var(--bg) 30%)}
+.toast{position:fixed;left:50%;bottom:20px;transform:translate(-50%,20px);background:var(--text);color:var(--bg);padding:10px 18px;border-radius:999px;font-size:14px;font-weight:600;opacity:0;transition:.25s;z-index:50;pointer-events:none}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+.toast.bad{background:var(--bad)}
+@media (max-width:640px){
+  .hdr h1{display:none}
+  .row{grid-template-columns:52px 1fr}
+  .thumb{width:52px;height:52px}
+  .acts{grid-column:1/-1;flex-direction:row}
+  .acts .btn{flex:1}
+  .pr input{width:84px}
+  .hdr{gap:10px}
+  .tab{padding:0 11px}
+  .stats{grid-template-columns:1fr 1fr}
+  .ord{grid-template-columns:1fr}
+  .ord-side{grid-template-columns:1fr auto auto;justify-items:stretch;align-items:center}
+  .ord-side select{width:100%}
+  .ord .sum{text-align:left}
+  .two{grid-template-columns:1fr}
+  .edit-card{grid-template-columns:90px 1fr}
+  .item-row{grid-template-columns:1fr 56px 90px 36px}
+  .strip-grid{grid-template-columns:repeat(3,1fr)}
+  .sticky-save{flex-wrap:nowrap}
+  .sticky-save .btn{flex:1;padding:0 8px;font-size:13px;white-space:nowrap}
+}
+</style>
+</head>
+<body data-api="api/">
+
+<div id="app" hidden>
+  <header>
+    <div class="wrap hdr">
+      <img src="/static/shop/img/logo.jpg" alt="">
+      <h1>Tulpan Flowers — админка</h1>
+      <div class="tabs" role="tablist">
+        <button class="tab" role="tab" data-tab="orders" aria-selected="true">Заказы<span class="dot" id="newDot" hidden>0</span></button>
+        <button class="tab" role="tab" data-tab="clients" aria-selected="false">Клиенты</button>
+        <button class="tab" role="tab" data-tab="products" aria-selected="false">Товары и цены</button>
+        <button class="tab" role="tab" data-tab="site" aria-selected="false">Инфо-сайт</button>
+        <button class="tab" role="tab" data-tab="shop" aria-selected="false">Магазин</button>
+      </div>
+      <form method="post" action="{% url 'panel_logout' %}" style="flex:none">{% csrf_token %}<button class="tab">Выйти</button></form>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div id="tab-orders">
+      <div class="stats" id="stats"></div>
+      <div class="tools">
+        <input id="oq" type="search" placeholder="Поиск: имя, телефон, номер заказа…">
+        <button class="btn btn-pink" id="addOrder">+ Новый заказ</button>
+      </div>
+      <div class="chips" id="statusChips" style="padding-bottom:14px"></div>
+      <div class="list" id="orders"></div>
+    </div>
+
+    <div id="tab-clients" hidden>
+      <div class="tools"><input id="cq" type="search" placeholder="Поиск клиента…"></div>
+      <div class="list" id="clients"></div>
+    </div>
+
+    <div id="tab-site" hidden>
+      <div class="tools" style="justify-content:space-between">
+        <p class="hint" style="padding:0">Всё, что здесь, показывается на информационном сайте.</p>
+        <a class="btn btn-line" id="infoLink" target="_blank" rel="noopener">Открыть сайт ↗</a>
+      </div>
+      <div id="siteForm"></div>
+      <div class="sticky-save">
+        <button class="btn btn-line" id="addBq">+ Добавить букет</button>
+        <button class="btn btn-pink" id="saveSite" disabled>Сохранить изменения</button>
+      </div>
+    </div>
+
+    <div id="tab-products" hidden>
+      <div class="tools">
+        <input id="q" type="search" placeholder="Поиск товара…">
+        <select id="catFilter"></select>
+        <button class="btn btn-pink" id="addBtn">+ Добавить товар</button>
+      </div>
+      <p class="hint">Поменяйте цену и нажмите «Сохранить» — в каталоге она обновится сразу. На главной показываются первые 4 товара с отметкой «Хит». <a href="/catalog/" target="_blank" rel="noopener" style="color:var(--pink-2)">Открыть каталог ↗</a></p>
+      <div class="list" id="list"></div>
+    </div>
+
+    <div id="tab-shop" hidden>
+      <form class="panel" id="shopForm">
+        <h2>Данные магазина</h2>
+        <label>Название<input name="name"></label>
+        <label>WhatsApp для заказов (только цифры, с кодом страны)<input name="whatsapp" inputmode="numeric" placeholder="996700633602"></label>
+        <label>Instagram (ссылка или имя)<input name="instagram" placeholder="https://www.instagram.com/tulpan_flowers_manas/"></label>
+        <label>Instagram второго филиала (ссылка или имя, если есть)<input name="instagram2" placeholder="Вставьте ссылку на аккаунт"></label>
+        <label>Время работы<input name="hours" placeholder="09:00–00:00"></label>
+        <label>Адреса (каждый с новой строки)<textarea name="addresses" rows="3"></textarea></label>
+        <div><button class="btn btn-pink">Сохранить</button></div>
+      </form>
+    </div>
+  </main>
+</div>
+
+<dialog id="dlg">
+  <form class="dlg" id="editForm" method="dialog">
+    <h2 id="dlgTitle">Товар</h2>
+    <div class="photo">
+      <div id="photoPrev"></div>
+      <div style="display:grid;gap:8px">
+        <label class="btn btn-line" style="display:inline-flex;cursor:pointer">Загрузить фото<input type="file" id="file" accept="image/*" hidden></label>
+        <button type="button" class="btn btn-line" id="noPhoto">Убрать фото</button>
+      </div>
+    </div>
+    <label>Название<input id="eName" required maxlength="120"></label>
+    <label>Категория<select id="eCat"></select></label>
+    <label>Описание<textarea id="eDesc" rows="2" maxlength="500"></textarea></label>
+    <div style="display:grid;gap:8px">
+      <label style="margin:0">Варианты и цены (размер, количество; если вариант один — название можно не писать)</label>
+      <div id="eOpts" style="display:grid;gap:8px"></div>
+      <div><button type="button" class="btn btn-line" id="addOpt">+ Вариант</button></div>
+    </div>
+    <div class="flags">
+      <label><input type="checkbox" id="eActive"> Показывать на сайте</label>
+      <label><input type="checkbox" id="eHit"> Хит продаж</label>
+    </div>
+    <div class="dlg-f">
+      <button type="button" class="btn btn-bad" id="delBtn">Удалить</button>
+      <div style="display:flex;gap:10px">
+        <button type="button" class="btn btn-line" id="cancelBtn">Отмена</button>
+        <button type="button" class="btn btn-pink" id="saveBtn">Сохранить</button>
+      </div>
+    </div>
+  </form>
+</dialog>
+
+<dialog id="ordDlg" class="dlg-wide">
+  <form class="dlg" id="ordForm" method="dialog">
+    <h2 id="ordTitle">Заказ</h2>
+    <div class="two">
+      <label>Статус<select id="oStatus"></select></label>
+      <label>Откуда заказ<select id="oSource"></select></label>
+      <label>Имя клиента<input id="oName" maxlength="80"></label>
+      <label>Телефон<input id="oPhone" type="tel" maxlength="30" placeholder="0700 123 456"></label>
+      <label>Когда нужно<input id="oWhen" maxlength="80"></label>
+      <label>Как получить<input id="oHow" maxlength="160" placeholder="Самовывоз или доставка"></label>
+    </div>
+    <label>Адрес доставки<input id="oAddr" maxlength="200"></label>
+    <div style="display:grid;gap:8px">
+      <label style="margin:0">Позиции (название, количество, цена за штуку)</label>
+      <div id="oItems" style="display:grid;gap:8px"></div>
+      <datalist id="prodList"></datalist>
+      <div><button type="button" class="btn btn-line" id="addItem">+ Позиция</button></div>
+    </div>
+    <div class="total-line"><span>Итого</span><span id="oTotal">0 сом</span></div>
+    <label>Текст открытки<textarea id="oCard" rows="2" maxlength="300"></textarea></label>
+    <label>Комментарий клиента<textarea id="oNote" rows="2" maxlength="500"></textarea></label>
+    <label>Заметка для себя (клиент её не видит)<textarea id="oMemo" rows="2" maxlength="500"></textarea></label>
+    <div class="dlg-f">
+      <button type="button" class="btn btn-bad" id="oDel">Удалить</button>
+      <div style="display:flex;gap:10px">
+        <button type="button" class="btn btn-line" id="oCancel">Отмена</button>
+        <button type="button" class="btn btn-pink" id="oSave">Сохранить</button>
+      </div>
+    </div>
+  </form>
+</dialog>
+
+<dialog id="clDlg">
+  <form class="dlg" method="dialog">
+    <h2 id="clName">Клиент</h2>
+    <div class="hint" id="clInfo" style="padding:0"></div>
+    <label>Заметка о клиенте (любимые цветы, важные даты)<textarea id="clNote" rows="3" maxlength="500"></textarea></label>
+    <div class="hist" id="clHist"></div>
+    <div class="dlg-f">
+      <button type="button" class="btn btn-line" id="clNew">+ Заказ для клиента</button>
+      <div style="display:flex;gap:10px">
+        <button type="button" class="btn btn-line" id="clCancel">Закрыть</button>
+        <button type="button" class="btn btn-pink" id="clSave">Сохранить</button>
+      </div>
+    </div>
+  </form>
+</dialog>
+<div class="toast" id="toast" role="status"></div>
+
+<script src="/static/shop/js/panel.js" defer></script>
+</body>
+</html>

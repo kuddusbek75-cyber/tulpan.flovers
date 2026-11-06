@@ -1,0 +1,53 @@
+{
+ "hero": "img/site/hero.jpg",
+ "bouquets": [
+  {
+   "name": "Классика",
+   "desc": "Красные розы · зелень",
+   "img": "img/site/f1.jpg",
+   "price": 0,
+   "cat": "bouquets",
+   "product": "b-red-25",
+   "opt": 0
+  },
+  {
+   "name": "Нежное облако",
+   "desc": "Розовые розы · корзина",
+   "img": "img/site/f2.jpg",
+   "price": 0,
+   "cat": "baskets",
+   "product": "k-pink-gyps",
+   "opt": 0
+  },
+  {
+   "name": "Белая элегия",
+   "desc": "Белые розы · атласная лента",
+   "img": "img/site/f3.jpg",
+   "price": 0,
+   "cat": "bouquets",
+   "product": "b-white-51",
+   "opt": 0
+  }
+ ],
+ "tiles": [
+  {
+   "title": "Мягкие игрушки",
+   "text": "Мишки от 30 см до 1,8 м — лучшее дополнение к букету →",
+   "img": "img/site/toys.jpg",
+   "cat": "toys"
+  },
+  {
+   "title": "Всё для праздника",
+   "text": "Шары-цифры, свечи, колпаки, пакеты и открытки →",
+   "img": "img/site/gifts.jpg",
+   "cat": "gifts"
+  }
+ ],
+ "strip": [
+  "img/site/band.jpg",
+  "img/site/f4.jpg",
+  "img/site/hero.jpg",
+  "img/site/f2.jpg",
+  "img/site/f3.jpg"
+ ]
+}

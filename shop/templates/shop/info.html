@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tulpan Flowers — цветочный бутик</title>
+<meta name="description" content="Tulpan Flowers — свежие букеты, розы, мягкие игрушки и подарки. Самые доступные цветы. Работаем 09:00–00:00, два магазина.">
+<link rel="icon" href="/static/shop/img/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --wine:#3a0910; --wine-2:#2a060b; --wine-3:#4a0d16; --deep:#1c0407;
+  --ivory:#f8efe6; --muted:#d3b8b4; --rose:#c9485b; --satin:#8e1f2e;
+  --script:'Great Vibes',cursive; --serif:'Cormorant Garamond',Georgia,serif; --sans:'Montserrat',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--wine);color:var(--ivory);font:15px/1.7 var(--sans);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--ivory);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.script{font-family:var(--script);font-weight:400;line-height:1}
+.btn{display:inline-flex;align-items:center;justify-content:center;height:44px;padding:0 26px;font:600 11.5px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;transition:background .25s,color .25s}
+.btn-ivory{background:var(--ivory);color:var(--wine-2)}
+.btn-ivory:hover{background:#fff}
+.btn-line{border:1px solid rgba(248,239,230,.7)}
+.btn-line:hover{background:var(--ivory);color:var(--wine-2)}
+
+/* навигация */
+.nav{position:absolute;top:0;left:0;right:0;z-index:5}
+.nav .wrap{display:flex;align-items:center;gap:30px;height:84px}
+.brand{font-size:34px}
+.links{display:flex;gap:34px;margin-left:auto;font-size:12.5px;letter-spacing:.06em}
+.links a{opacity:.85}
+.links a:hover{opacity:1}
+
+/* первый экран */
+.hero{position:relative;min-height:min(92vh,760px);display:grid;place-items:center;text-align:center;overflow:hidden;background:var(--deep)}
+.hero-bg{position:absolute;inset:-20px;background:url(/static/shop/img/site/hero.jpg) center/cover;filter:blur(3px) saturate(.9);transform:scale(1.04)}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(70% 60% at 50% 50%,rgba(42,6,11,.62),rgba(28,4,7,.9))}
+.hero-in{position:relative;z-index:1;padding:120px 20px 80px}
+.hero h1{font:600 clamp(34px,8vw,92px)/1.1 var(--sans);letter-spacing:-.01em;text-shadow:0 4px 30px rgba(0,0,0,.4)}
+.hero p{font-size:16px;color:var(--muted);max-width:520px;margin:22px auto 32px}
+.hero p b{color:var(--ivory);font-weight:500}
+.hero .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.scroll{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:1;font-size:10.5px;letter-spacing:.24em;opacity:.6}
+
+section{padding:90px 0}
+.h{font-size:clamp(52px,7vw,72px);text-align:center;color:var(--ivory)}
+.sub{text-align:center;color:var(--muted);margin-top:10px}
+.tabs{display:flex;justify-content:center;gap:clamp(18px,4vw,48px);border-bottom:1px solid rgba(248,239,230,.25);max-width:680px;margin:34px auto 50px;font-size:12px;letter-spacing:.06em;flex-wrap:wrap}
+.tabs a{padding:10px 2px;color:var(--muted);border-bottom:1px solid transparent;margin-bottom:-1px}
+.tabs a:hover,.tabs a.on{color:var(--ivory);border-color:var(--ivory)}
+
+.bqs{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,3vw,40px)}
+.bq{text-align:center}
+.bq .pic{aspect-ratio:1/1;border-radius:0;overflow:hidden;border:1px solid rgba(248,239,230,.18);padding:8px;background:var(--wine-3)}
+.bq img{width:100%;height:100%;object-fit:cover;border-radius:0}
+.bq h3{font:500 24px/1.2 var(--sans);margin-top:20px}
+.bq p{font-size:12.5px;font-weight:600;color:var(--muted);margin:4px 0 16px}
+.bq .cost{font-size:18px;color:var(--ivory);margin:-8px 0 14px}
+.bq .btn{height:36px;font-size:10.5px}
+
+.story{text-align:center;padding-bottom:40px}
+.story p{max-width:640px;margin:26px auto 0;color:var(--muted);font-size:15.5px}
+.story .kg{font:italic 500 22px var(--serif);color:var(--ivory);margin-top:24px}
+
+/* атласная лента */
+.ribbon{position:relative;height:220px;margin:30px 0 0}
+.ribbon .band{position:absolute;left:0;right:0;top:50%;height:74px;transform:translateY(-50%);
+  background:linear-gradient(180deg,#5d0f1b 0%,#a1283a 22%,#c94b5d 34%,#8e1f2e 52%,#6b1422 70%,#a8303f 86%,#5a0e19 100%);
+  box-shadow:0 18px 40px rgba(0,0,0,.45)}
+.ribbon svg{position:absolute;left:50%;top:50%;width:min(380px,80vw);transform:translate(-50%,-50%);filter:drop-shadow(0 18px 30px rgba(0,0,0,.5))}
+
+
+.more{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.tile{position:relative;aspect-ratio:4/3;overflow:hidden}
+.tile img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.tile:hover img{transform:scale(1.04)}
+.tile::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(28,4,7,.92))}
+.tile div{position:absolute;left:28px;right:28px;bottom:24px;z-index:1}
+.tile h3{font-size:48px}
+.tile p{font-size:13.5px;color:var(--muted);margin-top:6px}
+
+.strip{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:0}
+.strip img{width:100%;aspect-ratio:3/4;object-fit:cover}
+
+
+.contacts{background:var(--wine-2);border-top:1px solid rgba(248,239,230,.12)}
+.cgrid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px;margin-top:50px}
+.cgrid h3{font:500 24px var(--serif);margin-bottom:12px}
+.cgrid p,.cgrid li{color:var(--muted);font-size:14px;list-style:none}
+.cgrid ul{padding:0}
+.cgrid li{margin-bottom:8px}
+.cgrid a:hover{color:var(--ivory)}
+.cgrid .btn{margin-top:18px}
+footer{background:var(--deep);padding:30px 0;font-size:12px;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+footer .script{font-size:30px;color:var(--ivory)}
+
+@media (max-width:860px){
+  .links{display:none}
+  section{padding:64px 0}
+  .bqs{grid-template-columns:1fr;max-width:340px;margin:0 auto}
+  .more{grid-template-columns:1fr}
+  .strip{grid-template-columns:repeat(3,1fr)}
+  .strip img:nth-child(n+4){display:none}
+  .cgrid{grid-template-columns:1fr;gap:30px}
+  .ribbon{height:160px}
+  .ribbon .band{height:52px}
+}
+@media (max-width:480px){
+  .wrap{padding:0 16px}
+  .tile h3{font-size:38px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand script" href="#top">Tulpan</a>
+    <nav class="links">
+      <a href="#top">Главная</a>
+      <a href="#bouquets">Букеты</a>
+      <a href="#story">О нас</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-in">
+      <h1 class="script">Tulpan Flowers</h1>
+      <p>Свежие букеты, собранные вручную для особых дней. <b>Эң арзан гүлдөр бир гана бизде</b> — красиво не значит дорого.</p>
+      <div class="cta">
+        <a class="btn btn-ivory" data-catalog href="#">Выбрать букет</a>
+        <a class="btn btn-line" data-wa href="#" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+    <span class="scroll">ЛИСТАЙТЕ ↓</span>
+  </div>
+
+  <section id="bouquets">
+    <div class="wrap">
+      <h2 class="h script">Наши букеты</h2>
+      <nav class="tabs" aria-label="Разделы каталога">
+        <a class="on" data-catalog="bouquets" href="#">Букеты</a>
+        <a data-catalog="baskets" href="#">Корзины и боксы</a>
+        <a data-catalog="bride" href="#">Невестам</a>
+        <a data-catalog="flowers" href="#">Поштучно</a>
+        <a data-catalog="toys" href="#">Игрушки</a>
+      </nav>
+      <div class="bqs" id="bqs">
+        <article class="bq">
+          <div class="pic"><img src="/static/shop/img/site/f1.jpg" alt="Букет из 25 красных роз" loading="lazy"></div>
+          <h3>Классика</h3>
+          <p>Красные розы · зелень</p>
+          <a class="btn btn-line" data-catalog="bouquets" href="#">Заказать</a>
+        </article>
+        <article class="bq">
+          <div class="pic"><img src="/static/shop/img/site/f2.jpg" alt="Корзина розовых роз" loading="lazy"></div>
+          <h3>Нежное облако</h3>
+          <p>Розовые розы · корзина</p>
+          <a class="btn btn-line" data-catalog="baskets" href="#">Заказать</a>
+        </article>
+        <article class="bq">
+          <div class="pic"><img src="/static/shop/img/site/f3.jpg" alt="Большой букет белых роз" loading="lazy"></div>
+          <h3>Белая элегия</h3>
+          <p>Белые розы · атласная лента</p>
+          <a class="btn btn-line" data-catalog="bouquets" href="#">Заказать</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="story" id="story" style="padding-top:20px">
+    <div class="wrap">
+      <h2 class="h script">Наша история</h2>
+      <p>Tulpan Flowers начался с простой мысли: цветы должны быть доступны каждому, а не только по большим праздникам. Мы каждый день получаем свежие розы, тюльпаны, гортензии и лилии и собираем из них букеты — от скромных 15 тюльпанов до огромных корзин из 101 розы. Добавим мишку, шар-цифру или открытку — и подарок готов.</p>
+      <p class="kg">Сүйүү, кубаныч, урмат — гүл менен айтыңыз.</p>
+    </div>
+  </section>
+
+  <div class="ribbon" aria-hidden="true">
+    <div class="band"></div>
+    <svg viewBox="0 0 400 260">
+      <defs>
+        <linearGradient id="sa" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c94b5d"/><stop offset=".45" stop-color="#8e1f2e"/><stop offset=".7" stop-color="#b13a4b"/><stop offset="1" stop-color="#5a0e19"/></linearGradient>
+        <linearGradient id="sb" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c94b5d"/><stop offset=".45" stop-color="#8e1f2e"/><stop offset=".7" stop-color="#b13a4b"/><stop offset="1" stop-color="#5a0e19"/></linearGradient>
+        <linearGradient id="sk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d45a6b"/><stop offset=".5" stop-color="#9a2537"/><stop offset="1" stop-color="#5a0e19"/></linearGradient>
+      </defs>
+      <path d="M182 128 C140 196 120 236 108 258 L150 250 L166 262 C176 220 186 170 196 136Z" fill="url(#sa)"/>
+      <path d="M218 128 C260 196 280 236 292 258 L250 250 L234 262 C224 220 214 170 204 136Z" fill="url(#sb)"/>
+      <path d="M188 116 C150 60 70 30 36 64 C10 92 30 150 70 160 C110 170 160 150 188 136Z" fill="url(#sa)"/>
+      <path d="M212 116 C250 60 330 30 364 64 C390 92 370 150 330 160 C290 170 240 150 212 136Z" fill="url(#sb)"/>
+      <path d="M180 120 C140 90 90 78 66 94 C90 92 140 104 180 128Z" fill="#5a0e19" opacity=".5"/>
+      <path d="M220 120 C260 90 310 78 334 94 C310 92 260 104 220 128Z" fill="#5a0e19" opacity=".5"/>
+      <rect x="176" y="104" width="48" height="46" rx="12" fill="url(#sk)"/>
+    </svg>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="more">
+        <a class="tile" data-catalog="toys" href="#">
+          <img src="/static/shop/img/site/toys.jpg" alt="Большой розовый плюшевый мишка" loading="lazy">
+          <div><h3 class="script">Мягкие игрушки</h3><p>Мишки от 30 см до 1,8 м — лучшее дополнение к букету →</p></div>
+        </a>
+        <a class="tile" data-catalog="gifts" href="#">
+          <img src="/static/shop/img/site/gifts.jpg" alt="Золотые шары-цифры" loading="lazy">
+          <div><h3 class="script">Всё для праздника</h3><p>Шары-цифры, свечи, колпаки, пакеты и открытки →</p></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="strip" aria-hidden="true">
+    <img src="/static/shop/img/site/band.jpg" alt="" loading="lazy">
+    <img src="/static/shop/img/site/f4.jpg" alt="" loading="lazy">
+    <img src="/static/shop/img/site/hero.jpg" alt="" loading="lazy">
+    <img src="/static/shop/img/site/f2.jpg" alt="" loading="lazy">
+    <img src="/static/shop/img/site/f3.jpg" alt="" loading="lazy">
+  </div>
+
+  <section class="contacts" id="contacts">
+    <div class="wrap">
+      <h2 class="h script">Ждём вас</h2>
+      <div class="cgrid">
+        <div>
+          <h3>Адреса</h3>
+          <ul id="addr">
+            <li><a href="https://2gis.kg/search/%D0%A2%D1%83%D0%BC%D0%BE%D0%BD%D0%B1%D0%B0%D0%B9%20%D0%91%D0%B0%D0%B9%D0%B7%D0%B0%D0%BA%D0%BE%D0%B2%D0%B0%20204%D0%96" target="_blank" rel="noopener">📍 Тумонбай Байзакова 204Ж</a></li>
+            <li><a href="https://2gis.kg/search/%D0%90%D1%80%D1%82%D1%8B%D0%BA%D0%B1%D0%B0%D0%B5%D0%B2%D0%B0%201" target="_blank" rel="noopener">📍 Артыкбаева 1</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Время работы</h3>
+          <p>Каждый день<br><span id="hours">09:00 — 00:00</span></p>
+        </div>
+        <div>
+          <h3>Связь</h3>
+          <ul>
+            <li><a data-wa id="waText" href="#" target="_blank" rel="noopener">WhatsApp: +996 700 633 602</a></li>
+            <li><a id="igText" href="https://www.instagram.com/tulpan_flowers_manas/" target="_blank" rel="noopener">Instagram: @tulpan_flowers_manas</a></li>
+            <li id="igItem2" hidden><a id="igText2" href="#" target="_blank" rel="noopener"></a></li>
+          </ul>
+          <a class="btn btn-line" data-wa href="#" target="_blank" rel="noopener">Написать нам</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap"><span class="script">Tulpan Flowers</span></div>
+</footer>
+
+<script src="/static/shop/js/info.js" defer></script>
+</body>
+</html>
